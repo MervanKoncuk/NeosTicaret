@@ -1,0 +1,11 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block content %}
+<h4 class="text-center">Ürün oluştur</h4>
+    <form action="" method="POST" enctype="multipart/form-data" class="w-50 m-auto mt-5">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" value="Oluştur" class="btn btn-outline-primary">
+    </form>
+{% endblock content %}

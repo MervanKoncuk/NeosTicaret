@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    {% include "includes/_navbar.html" %}
+      <div class="container border bg-light p-3">
+      {% if messages %}
+        {% for mesaj in messages %}
+            <div class="alert alert-{{mesaj.tags}}" role="alert">
+                {{mesaj}}
+            </div>
+        {% endfor %}
+      {% else %}
+      {% endif %}
+        {% block content %}
+            <div class="row">
+            {% for i in urunler %}
+            
+                <div class="col-md-3 mt-4">
+                <form action="" method="GET">
+                    
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{i.resim.url}}" height="200" alt="">
+                        <div class="card-body bg-light">
+                            <h5 class="card-title text-center">{{i.isim}}</h5>
+                            <small class=" d-block">{{i.fiyat}}</small>
+                            <input type="submit" value="Sepete Ekle" class="btn btn-primary">
+                        </div>
+                    </div>
+                </form>
+                  
+                
+            </div>
+  
+           
+            {% endfor %}
+        </div>
+        {% endblock content %}
+      </div>
+
+
+        {% include "includes/_footer.html" %}
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
