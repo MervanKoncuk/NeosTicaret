@@ -23,6 +23,8 @@ def index(request):
         'kategori':kategoriler,
         'search_query':search_query
     }
+
+    
     return render(request, "index.html", context)
 
 def filter(request, id):
