@@ -28,7 +28,6 @@ def index(request):
 def filter(request, id):
     kategoriler = Kategori.objects.all()
     urun = Urun.objects.filter(kategori = id)
-    kategoriler = Kategori.objects.all()
     context = {
         'urun':urun,
         'kategori':kategoriler
