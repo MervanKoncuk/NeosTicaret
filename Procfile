@@ -1,1 +1,1 @@
-web: gunicorn NeosTicaret.wsgi --log-file
+web: gunicon NeosTicaret.wsgi --log-file- 
