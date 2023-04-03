@@ -12,15 +12,15 @@ def userRegister(request):
         if form.is_valid():
             user = form.save(commit=False)
             user.save()
-            subject = 'NeosTicaret'
-            message = 'NeosTicaret sayfasına hoş geldiniz!'
-            send_mail(
-                subject,
-                message,
-                settings.EMAIL_HOST_USER,
-                [user.email],
-                fail_silently=False,
-            )
+            # subject = 'NeosTicaret'
+            # message = 'NeosTicaret sayfasına hoş geldiniz!'
+            # send_mail(
+            #     subject,
+            #     message,
+            #     settings.EMAIL_HOST_USER,
+            #     [user.email],
+            #     fail_silently=False,
+            # )
             messages.success(request, "Kullanıcı başarıyla oluşturuldu.")
             return redirect('index')
     context = {
