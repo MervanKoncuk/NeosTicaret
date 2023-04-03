@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'NeosTicaret.wsgi.application'
 #         default=config('DATABASE_URL')
 #     )
 # }
-DEFAULT = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'd71hbo1b2fc7vc',
