@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
+from decouple import config
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -77,10 +80,19 @@ WSGI_APPLICATION = 'NeosTicaret.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default=config('DATABASE_URL')
+#     )
+# }
+DEFAULT = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd71hbo1b2fc7vc',
+        'USER': 'nsheestrarujyj',
+        'PASSWORD': '5202edf5e02e639e69de5feb012500774df6a662bbf5a25cd0da1dd85dfd1fdf',
+        'HOST': 'ec2-18-202-8-133.eu-west-1.compute.amazonaws.com',
+        'PORT': '5432', 
     }
 }
 
