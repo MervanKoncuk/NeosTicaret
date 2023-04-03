@@ -7,7 +7,7 @@ class Kategori(models.Model):
         return self.name
 class Urun(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    kategori = models.ForeignKey(Kategori, on_delete=models.CASCADE, null=True)
+    kategori = models.ForeignKey(Kategori, on_delete=models.CASCADE, null=True, blank=True)
     isim = models.CharField(max_length=200, verbose_name="Ürün ismi")
     resim = models.FileField(upload_to="urunResmi", null=True, blank=True, verbose_name="Ürün resmi")
     fiyat = models.IntegerField(null=True)
